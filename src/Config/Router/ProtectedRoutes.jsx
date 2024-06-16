@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Layout from "../../Components/Layout";
 
 function ProtectedRoutes({ component: Component }) {
   const [isUser, setIsUser] = useState(true);
@@ -12,7 +13,7 @@ function ProtectedRoutes({ component: Component }) {
     }
   }, [isUser]);
 
-  return isUser && <Component />;
+  return isUser && <Layout component={Component} />;
 }
 
 export default ProtectedRoutes;
