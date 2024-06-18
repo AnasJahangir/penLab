@@ -9,7 +9,7 @@ function Layout({ component: Component }) {
       <div>
         <Navbar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
         <Sidebar openSidebar={openSidebar} />
-        <div className="p-4 sm:ml-64">
+        <div className=" sm:ml-64">
           <Component />
         </div>
       </div>

@@ -4,6 +4,7 @@ import NotFound from "../../Pages/NotFound";
 import Home from "../../Pages/Home";
 import ProtectedRoutes from "./ProtectedRoutes";
 import AddQuestions from "../../Pages/AddQuestions";
+import Questions from "../../Pages/Questions";
 
 function MyRoutes() {
   return (
@@ -13,6 +14,14 @@ function MyRoutes() {
         <Route
           path="/add-questions"
           element={<ProtectedRoutes component={AddQuestions} />}
+        />
+        <Route
+          path="/add-questions"
+          element={<ProtectedRoutes component={AddQuestions} />}
+        />
+        <Route
+          path="/questions"
+          element={<ProtectedRoutes component={Questions} />}
         />
 
         <Route path="*" element={<NotFound />} />
