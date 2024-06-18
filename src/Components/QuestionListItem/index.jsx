@@ -12,6 +12,7 @@ const QuestionListItem = ({ question }) => {
   };
 
   return (
+
     <div className="relative">
       <li className="flex justify-between items-center mb-4">
         <div className="cursor-pointer" onClick={() => navigate("/questions")}>
