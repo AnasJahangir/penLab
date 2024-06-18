@@ -14,7 +14,7 @@ const QuestionListItem = ({ question }) => {
   return (
     <div className="relative">
       <li className="flex justify-between items-center mb-4">
-        <div className="cursor-pointer" onClick={navigate("/questions")}>
+        <div className="cursor-pointer" onClick={() => navigate("/questions")}>
           <p className="text-[20px]">{question.text}</p>
           <p className="italic">Last updated: {question.updated}</p>
         </div>
