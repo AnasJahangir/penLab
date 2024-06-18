@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaEye, FaBookmark, FaEdit, FaCode } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const QuestionListItem = ({ question }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -12,7 +14,7 @@ const QuestionListItem = ({ question }) => {
   return (
     <div className="relative">
       <li className="flex justify-between items-center mb-4">
-        <div>
+        <div className="cursor-pointer" onClick={navigate("/questions")}>
           <p className="text-[20px]">{question.text}</p>
           <p className="italic">Last updated: {question.updated}</p>
         </div>
