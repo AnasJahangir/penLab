@@ -31,7 +31,12 @@ const QuestionListItem = ({ question }) => {
       {isModalOpen && (
         <div className="absolute text-[#0277BD] text-[14px] font-[700] mt-2 w-[300px] bg-white border rounded shadow-lg right-0 z-10">
           <ul>
-            <li className="flex items-center p-2 hover:bg-gray-100 cursor-pointer">
+            <li
+              className="flex items-center p-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() =>
+                navigate("/add-questions", { state: { id: question.id } })
+              }
+            >
               <FaEye className="mr-2" /> Preview Question
             </li>
             <li className="flex items-center p-2 hover:bg-gray-100 cursor-pointer">

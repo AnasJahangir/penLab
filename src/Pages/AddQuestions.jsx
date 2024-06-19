@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Stepper from "../Components/Stepper";
 import SelectGoal from "../Components/SelectGoal";
 import Preview from "../Components/Preview";
@@ -12,8 +12,18 @@ function AddQuestions() {
   const [goal, setGoal] = useState("Monitoring");
   const [question, setQuestion] = useState("");
   const [indicator, setIndicator] = useState("Indicator 1");
+  const location = useLocation();
 
-  console.log(goal);
+  console.log(location);
+  useEffect(() => {
+    if (location.state?.id) {
+      setCurrentStep(3);
+      // setGoal(location.state.goal);
+      // setQuestion(location.state.question);
+      // setIndicator(location.state.indicator);
+      // setCurrentStep(location.state.currentStep);
+    }
+  }, [location]);
   const handleNextStep = () => {
     setCurrentStep((prevStep) => (prevStep < 3 ? prevStep + 1 : prevStep));
   };
@@ -63,7 +73,7 @@ function AddQuestions() {
               )}
             </div>
           </div>
-          <Preview goal={goal} question={question} currentStep={currentStep}/>
+          <Preview goal={goal} question={question} currentStep={currentStep} />
         </div>
       </div>
     </div>
